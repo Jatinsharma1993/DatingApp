@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -36,6 +37,7 @@ namespace API.Controllers
         public async Task<ActionResult<IEnumerable<MemberDto>>> GetUsers([FromQuery] UserParams userParams)
         {
            var user = await _userRepository.GetUserByUsernameAsync(User.GetUsername());
+           Console.WriteLine(user);
 
            userParams.CurrentUsername = user.UserName;
 
@@ -43,6 +45,7 @@ namespace API.Controllers
                userParams.Gender = user.Gender == "male" ? "female" : "male";
            }
             var users = await _userRepository.GetMembersAsync(userParams);
+            
             Response.AddPaginationHeader(users.CurrentPage , users.PageSize, 
             users.TotalCount , users.TotalPages);
             
