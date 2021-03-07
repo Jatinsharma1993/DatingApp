@@ -3,7 +3,7 @@
     <button (click) = "get400Error()"class="btn btn-outline-primary mr-3">Test 400 Error</button>
     <button (click) = "get401Error()"class="btn btn-outline-primary mr-3">Test 401 Error</button>
     <button (click) = "get404Error()"class="btn btn-outline-primary mr-3">Test 404 Error</button>
-    <button (click) = "get400ValidationError()"class="btn btn-outline-primary mr-3">Test 404Validation Error</button>
+    <button (click) = "get400ValidationError()"class="btn btn-outline-primary mr-3">Test 404 Validation Error</button>
     <div class="row mt-5" *ngIf ="validationError.length > 0"></div>
         <ul class="text-danger">
             <li *ngFor="let error of validationError">
@@ -11,3 +11,17 @@
             </li>
         </ul>
 </ng-container>
+<div class="row">
+        <div class="col-xs-12" testDirective>
+            <button type ="button"
+            class="btn btn-primary dropdown-toggle">Manage recipe <span class ="carrot"></span></button>
+            <ul class="dropdown-menu" style="cursor: pointer;">
+                <li><a>To Shopping</a></li>
+                <li><a>Edit Recipe</a></li>
+                <li><a>Delete Recipe</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+

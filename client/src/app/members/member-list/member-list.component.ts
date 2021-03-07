@@ -23,6 +23,7 @@ export class MemberListComponent implements OnInit {
 
   constructor(private memberService : MembersService) { 
     this.userParams = this.memberService.getUserparams();
+    
   }
 
   ngOnInit(): void {
